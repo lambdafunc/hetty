@@ -1,11 +1,10 @@
-import { Box, Typography } from "@mui/material";
-
-import Layout, { Page } from "../../components/Layout";
+import { Layout, Page } from "features/Layout";
+import Sender from "features/sender";
 
 function Index(): JSX.Element {
   return (
     <Layout page={Page.Sender} title="Sender">
-      <Typography paragraph>Coming soon…</Typography>
+      <Sender />
     </Layout>
   );
 }

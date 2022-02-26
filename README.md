@@ -5,6 +5,7 @@
 </h1>
 
 [![Latest GitHub release](https://img.shields.io/github/v/release/dstotijn/hetty?color=18BA91&style=flat-square)](https://github.com/dstotijn/hetty/releases/latest)
+[![Build Status](https://img.shields.io/endpoint.svg?url=https://actions-badge.atrox.dev/dstotijn/hetty/badge&style=flat-square&label=build+%26+test&logo=none&color=18BA91)](https://github.com/dstotijn/hetty/actions/workflows/build-test.yml)
 ![GitHub download count](https://img.shields.io/github/downloads/dstotijn/hetty/total?color=18BA91&style=flat-square)
 [![GitHub](https://img.shields.io/github/license/dstotijn/hetty?color=18BA91&style=flat-square)](https://github.com/dstotijn/hetty/blob/master/LICENSE)
 [![Documentation](https://img.shields.io/badge/hetty-docs-18BA91?style=flat-square)](https://hetty.xyz/)
@@ -18,7 +19,7 @@ features tailored to the needs of the infosec and bug bounty community.
 ## Features
 
 - Man-in-the-middle (MITM) HTTP/1.1 proxy with logs
-- Project based database storage (SQLite)
+- Project based database storage (BadgerDB)
 - Scope support
 - Headless management API using GraphQL
 - Embedded web interface (Next.js)

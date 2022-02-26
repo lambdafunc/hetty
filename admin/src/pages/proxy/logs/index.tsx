@@ -1,16 +1,10 @@
-import { Box } from "@mui/material";
-
-import LogsOverview from "../../../components/reqlog/LogsOverview";
-import Layout, { Page } from "../../../components/Layout";
-import Search from "../../../components/reqlog/Search";
+import { Layout, Page } from "features/Layout";
+import RequestLogs from "features/reqlog";
 
 function ProxyLogs(): JSX.Element {
   return (
     <Layout page={Page.ProxyLogs} title="Proxy logs">
-      <Box mb={2}>
-        <Search />
-      </Box>
-      <LogsOverview />
+      <RequestLogs />
     </Layout>
   );
 }

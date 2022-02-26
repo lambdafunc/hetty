@@ -27,7 +27,7 @@ var reqLogSearchKeyFns = map[string]func(rl RequestLog) string{
 	"req.timestamp": func(rl RequestLog) string { return ulid.Time(rl.ID.Time()).String() },
 }
 
-var resLogSearchKeyFns = map[string]func(rl ResponseLog) string{
+var ResLogSearchKeyFns = map[string]func(rl ResponseLog) string{
 	"res.proto":        func(rl ResponseLog) string { return rl.Proto },
 	"res.statusCode":   func(rl ResponseLog) string { return strconv.Itoa(rl.StatusCode) },
 	"res.statusReason": func(rl ResponseLog) string { return rl.Status },
@@ -154,7 +154,7 @@ func (reqLog RequestLog) getMappedStringLiteral(s string) string {
 			return ""
 		}
 
-		fn, ok := resLogSearchKeyFns[s]
+		fn, ok := ResLogSearchKeyFns[s]
 		if ok {
 			return fn(*reqLog.Response)
 		}
@@ -174,7 +174,7 @@ func (reqLog RequestLog) matchStringLiteral(strLiteral search.StringLiteral) (bo
 	}
 
 	if reqLog.Response != nil {
-		for _, fn := range resLogSearchKeyFns {
+		for _, fn := range ResLogSearchKeyFns {
 			if strings.Contains(
 				strings.ToLower(fn(*reqLog.Response)),
 				strings.ToLower(strLiteral.Value),
